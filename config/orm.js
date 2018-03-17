@@ -76,7 +76,8 @@ var orm = {
         queryString += objToSql(objColsVals);
         queryString += ' WHERE ';
         queryString += condition;
-
+        console.log(objToSql(objColsVals));
+        console.log("-------------------------");
         console.log(queryString);
 
         connection.query(queryString, function (err, result) {
@@ -92,4 +93,3 @@ var orm = {
 
 module.exports = orm;
 
-// INSERT INTO burgers(burger_name, devoured) VALUES('Mexican Burger', false);

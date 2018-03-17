@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 
 // Set Handlebars.
 const exphbs = require("express-handlebars");
-
-app.engine("hbs", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "hbs");
+app.engine("hbs", exphbs({ defaultLayout: "main" }));
+
 
 // Import routes and give the server access to them.
 const routes = require("./controllers/burgersController.js");
